@@ -23,25 +23,42 @@ body {
 }
 
 /* ===== hero 背景クロスフェード ===== */
+/* ===== hero 全体 ===== */
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
 }
-
 .hero-bg {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 110%;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
+  animation: heroZoom 12s linear infinite;
 }
 
-.hero-bg.active { opacity: 1; }
+.hero-bg.active {
+  opacity: 1;
+}
+
+@keyframes heroZoom {
+  0% {
+    background-size: 110%;
+    background-position: center;
+  }
+  100% {
+    background-size: 120%;
+    background-position: center;
+  }
+}
+
 
 /* ===== 左上キャッチコピー ===== */
 .hero-copy {
