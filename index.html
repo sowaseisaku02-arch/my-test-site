@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>確認用ページ</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+#site { display: none; }
+
+.top-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== hero 背景クロスフェード ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-bg.active { opacity: 1; }
+
+/* ===== 左上キャッチコピー ===== */
+.hero-copy {
+  position: absolute;
+  top: 120px;
+  left: 8%;
+  width: 35%;
+  max-width: 560px;
+}
+
+/* ===== サブコピー ===== */
+.hero-subcopy {
+  position: absolute;
+  top: 300px; /* ← ここを変更（240 → 300） */
+  left: 8%;
+  width: 35%;
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+
+/* ===== 右下商品画像 ===== */
+.hero-product {
+  position: absolute;
+  bottom: 75px;
+  right: 5%;
+  width: 50%;
+  max-width: 750px;
+  height: auto;
+}
+
+/* 下部コンテンツ */
+.content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#error {
+  display: none;
+  text-align: center;
+  margin-top: 40vh;
+  font-size: 14px;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .hero-copy,
+  .hero-subcopy {
+    width: 80%;
+    max-width: 280px;
+    left: 10%;
+  }
+  .hero-copy { top: 20px; }
+  .hero-subcopy { top: 100px; font-size: 14px; }
+  .hero-product {
+    width: 90%;
+    max-width: 300px;
+    bottom: 20px;
+    right: 5%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="site">
+
+  <!-- 上部ヘッダー画像 -->
+  <div class="top-image">
+    <img src="images/header-image.png" alt="">
+  </div>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="hero-bg active" style="background-image:url('images/hero1.jpg');"></div>
+    <div class="hero-bg" style="background-image:url('images/hero2.jpg');"></div>
+    <div class="hero-bg" style="background-image:url('images/hero3.jpg');"></div>
+
+    <!-- 左上キャッチコピー -->
+    <img class="hero-copy" src="images/catch.png" alt="キャッチコピー">
+
+    <!-- サブコピー -->
+    <div class="hero-subcopy active">空気を動かさず、空間全体をやさしく整える。</div>
+    <div class="hero-subcopy">静かで、温度ムラのない快適な環境を実現。</div>
+    <div class="hero-subcopy">人と地球にやさしい、省エネルギー設計で未来を支える。</div>
+
+    <!-- 右下商品画像 -->
+    <img class="hero-product" src="images/product.png" alt="商品写真">
+  </section>
+
+  <!-- 下部コンテンツ -->
+  <section class="content">
+    <img src="images/content.jpg" alt="">
+  </section>
+
+</div>
+
+<div id="error">アクセスできません</div>
+
+<script>
+const PASSWORD = "sowa2026";
+const input = prompt("パスワードを入力してください");
+
+if(input === PASSWORD){
+  document.getElementById("site").style.display = "block";
+
+  const backgrounds = document.querySelectorAll('.hero-bg');
+  const subs = document.querySelectorAll('.hero-subcopy');
+  let current = 0;
+  const displayDuration = 5000;
+
+  setInterval(() => {
+    backgrounds.forEach(bg => bg.classList.remove('active'));
+    backgrounds[current].classList.add('active');
+
+    subs.forEach(sub => sub.style.opacity = 0);
+    setTimeout(() => {
+      subs.forEach(sub => sub.style.transform = 'translateY(-20px)');
+      subs[current].style.opacity = 1;
+      subs[current].style.transform = 'translateY(0)';
+    }, 50);
+
+    current = (current + 1) % backgrounds.length;
+  }, displayDuration);
+
+} else {
+  document.getElementById("error").style.display = "block";
+}
+</script>
+
+</body>
+</html>
