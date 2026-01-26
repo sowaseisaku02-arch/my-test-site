@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>確認用ページ</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+#site { display: none; }
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== ヘッダー ===== */
+.top-image img {
+  width: 100%;
+}
+
+/* ===== hero ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-track {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 1.6s ease-in-out;
+}
+
+.hero-slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* テキスト */
+.hero-text {
+  position: absolute;
+  left: 8%;
+  bottom: 18%;
+  max-width: 560px;
+}
+
+.hero-lead {
+  position: absolute;
+  font-size: 20px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.hero-lead.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== コンテンツ ===== */
+.content img,
+.footer img {
+  width: 100%;
+}
+
+#error {
+  display: none;
+  text-align: center;
+  margin-top: 40vh;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="site">
+
+<header class="top-image">
+  <img src="images/header-image.png" alt="">
+</header>
+
+<section class="hero">
+  <div class="hero-track">
+    <div class="hero-slide" style="background-image:url('images/hero1.jpg');"></div>
+    <div class="hero-slide" style="background-image:url('images/hero2.jpg');"></div>
+    <div class="hero-slide" style="b
