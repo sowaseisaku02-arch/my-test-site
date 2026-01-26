@@ -7,14 +7,17 @@
 <title>確認用ページ</title>
 
 <style>
+/* ===== 基本 ===== */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background: #000;
   color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-#site { display: none; }
+#site {
+  display: none;
+}
 
 img {
   width: 100%;
@@ -22,8 +25,9 @@ img {
   display: block;
 }
 
-/* ===== ヘッダー ===== */
-.top-image img {
+/* ===== 共通 ===== */
+header img,
+footer img {
   width: 100%;
 }
 
@@ -35,48 +39,26 @@ img {
   overflow: hidden;
 }
 
-.hero-track {
-  display: flex;
-  width: 300%;
-  height: 100%;
-  transition: transform 1.6s ease-in-out;
-}
-
 .hero-slide {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
-}
-
-/* テキスト */
-.hero-text {
-  position: absolute;
-  left: 8%;
-  bottom: 18%;
-  max-width: 560px;
-}
-
-.hero-lead {
-  position: absolute;
-  font-size: 20px;
-  line-height: 1.6;
+  background-repeat: no-repeat;
   opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition: opacity 1.5s ease;
 }
 
-.hero-lead.active {
+.hero-slide.active {
   opacity: 1;
-  transform: translateY(0);
 }
 
-/* ===== コンテンツ ===== */
-.content img,
-.footer img {
-  width: 100%;
+/* ===== セクションリンク ===== */
+.section-link a {
+  display: block;
 }
 
+/* ===== エラー ===== */
 #error {
   display: none;
   text-align: center;
@@ -90,12 +72,83 @@ img {
 
 <div id="site">
 
-<header class="top-image">
-  <img src="images/header-image.png" alt="">
-</header>
+  <!-- ヘッダー -->
+  <header>
+    <img src="images/header.png" alt="">
+  </header>
 
-<section class="hero">
-  <div class="hero-track">
-    <div class="hero-slide" style="background-image:url('images/hero1.jpg');"></div>
-    <div class="hero-slide" style="background-image:url('images/hero2.jpg');"></div>
-    <div class="hero-slide" style="b
+  <!-- hero -->
+  <section class="hero">
+    <div class="hero-slide active" style="background-image:url('images/hero1.png');"></div>
+    <div class="hero-slide" style="background-image:url('images/hero2.png');"></div>
+    <div class="hero-slide" style="background-image:url('images/hero3.png');"></div>
+  </section>
+
+  <!-- about -->
+  <section class="section-link">
+    <a href="https://www.youtube.com/watch?v=hotxXxvrq50" target="_blank">
+      <img src="images/about.png" alt="about">
+    </a>
+  </section>
+
+  <!-- column -->
+  <section class="section-link">
+    <a href="https://sowaseisaku02-arch.github.io/my-test-site/column-001.html">
+      <img src="images/column-001.png" alt="column-001">
+    </a>
+  </section>
+
+  <!-- system -->
+  <section class="section-link">
+    <a href="https://sowaseisaku02-arch.github.io/my-test-site/system-001.html">
+      <img src="images/system-001.png" alt="system-001">
+    </a>
+  </section>
+
+  <!-- case -->
+  <section class="section-link">
+    <a href="https://sowaseisaku02-arch.github.io/my-test-site/case-001.html">
+      <img src="images/case.png" alt="case">
+    </a>
+  </section>
+
+  <!-- zeb -->
+  <section class="section-link">
+    <a href="https://sowaseisaku02-arch.github.io/my-test-site/zeb-001.html">
+      <img src="images/zeb.png" alt="zeb">
+    </a>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <img src="images/footer.png" alt="">
+  </footer>
+
+</div>
+
+<div id="error">アクセスできません</div>
+
+<script>
+/* ===== パスワード ===== */
+const PASSWORD = "2026";
+const input = prompt("パスワードを入力してください");
+
+if (input === PASSWORD) {
+  document.getElementById("site").style.display = "block";
+
+  const slides = document.querySelectorAll(".hero-slide");
+  let index = 0;
+
+  setInterval(() => {
+    slides.forEach(s => s.classList.remove("active"));
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 5000);
+
+} else {
+  document.getElementById("error").style.display = "block";
+}
+</script>
+
+</body>
+</html>
