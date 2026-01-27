@@ -10,9 +10,27 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #000;
-  color: #fff;
+  background: #fff;   /* ← 白 */
+  color: #000;        /* ← 文字も黒に */
 }
+
+/* sectionの余白を完全に消す */
+section {
+  margin: 0;
+  padding: 0;
+}
+
+/* aタグ由来のズレ防止 */
+.content a {
+  display: block;
+  line-height: 0;
+}
+
+/* 念のため img も */
+.content img {
+  display: block;
+}
+
 
 #site {
   display: none;
@@ -49,15 +67,14 @@ footer img {
     </a>
   </header>
 
-  <!-- メイン -->
-　<section class="content">
-　  <img src="images/column-002-1.png" alt="コラム002">
+<!-- メイン -->
+<section class="content">
+  <img src="images/column-002-1.png" alt="コラム002">
 
-  　<a href="https://sowaseisaku02-arch.github.io/my-test-site/column-003.html">
-    　<img src="images/column-002-2.png" alt="コラム003へ">
-  　</a>
-　</section>
-
+  <a href="https://sowaseisaku02-arch.github.io/my-test-site/column-003.html">
+    <img src="images/column-002-2.png" alt="コラム003へ">
+  </a>
+</section>
   <!-- フッター（共通） -->
   <footer>
     <img src="images/footer.png" alt="">
