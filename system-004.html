@@ -7,48 +7,94 @@
 <title>システム｜CENTRAL THERMO</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #fff;   /* ← 白 */
-  color: #000;        /* ← 文字も黒に */
+
+/* ===== リセット ===== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* sectionの余白を完全に消す */
-section {
-  margin: 0;
-  padding: 0;
+body{
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+  background:#fff;
+  color:#000;
 }
 
-/* aタグ由来のズレ防止 */
-.content a {
-  display: block;
-  line-height: 0;
+/* ===== 画像共通 ===== */
+
+img{
+  width:100%;
+  height:auto;
+  display:block;
+  vertical-align:bottom;
 }
 
-/* 念のため img も */
-.content img {
-  display: block;
+/* ===== リンク由来の隙間防止 ===== */
+
+a{
+  display:block;
+  line-height:0;
 }
 
+/* ===== hoverエフェクト（PCのみ） ===== */
 
-img {
-  width: 100%;
-  height: auto;
-  display: block;
+@media (hover:hover){
+a:hover{
+  opacity:0.8;
+  transition:opacity .25s;
+}
 }
 
-header img,
-footer img {
-  width: 100%;
+/* ===== セクション余白完全削除 ===== */
+
+section{
+  margin:0;
+  padding:0;
 }
 
-#error {
-  display: none;
-  text-align: center;
-  margin-top: 40vh;
-  font-size: 14px;
+/* ===== 導入事例3カラム ===== */
+
+.case-row{
+  display:flex;
+  justify-content:space-between;
+  max-width:1350px;
+  margin:0 auto;
 }
+
+.case-row a{
+  width:430px;
+  min-width:0;
+}
+
+/* ===== スマホ ===== */
+
+@media (max-width:768px){
+
+.case-row{
+  flex-direction:column;
+}
+
+.case-row a{
+  width:100%;
+}
+
+.case-row a + a{
+  margin-top:12px;
+}
+
+}
+
+/* ===== エラー ===== */
+
+#error{
+  display:none;
+  text-align:center;
+  margin-top:40vh;
+  font-size:14px;
+}
+
 </style>
 </head>
 
@@ -56,14 +102,17 @@ footer img {
 
 <div id="site">
 
-  <!-- ヘッダー（共通） -->
-  <header>
-    <a href="index.html">
-      <img src="images/header.png" alt="トップへ戻る">
-    </a>
-  </header>
+<!-- ヘッダー -->
+
+<header>
+<a href="index.html">
+<img src="images/header.png" alt="トップへ戻る">
+</a>
+</header>
+
 
   <!-- メイン -->
+  
  <section class="content">
   <a href="https://sowaseisaku02-arch.github.io/my-test-site/system-005.html">
     <img src="images/system-centralthermo-001.png" alt="CENTRAL THERMO システム">
@@ -75,21 +124,41 @@ footer img {
     <img src="images/system-centralthermo-spec.png" alt="CENTRAL THERMO ラインナップ">
   </a>
 
-  <a href="https://sowaseisaku02-arch.github.io/my-test-site/case-001.html">
-    <img src="images/system-centralthermo-002.png" alt="CENTRAL THERMO 導入事例へ">
-  </a>
+   <img src="images/system-centralthermo-002.png" alt="CENTRAL THERMO 導入事例">
+
+
+
+<!-- ===== 導入事例3カラム ===== -->
+
+<div class="case-row">
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-c-thermo-001.html">
+<img src="images/case-system-c-thermo-001-s.png" loading="lazy" alt="">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-c-thermo-002.html">
+<img src="images/case-system-c-thermo-002-s.png" loading="lazy" alt="">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-c-thermo-003.html">
+<img src="images/case-system-c-thermo-003-s.png" loading="lazy" alt="">
+</a>
+
+</div>
+
+
 </section>
 
 
-  <!-- フッター（共通） -->
-  <footer>
-    <img src="images/footer.png" alt="">
-  </footer>
+<!-- フッター -->
+
+<footer>
+<img src="images/footer.png" alt="">
+</footer>
 
 </div>
 
 <div id="error">アクセスできません</div>
-
 
 </body>
 </html>
