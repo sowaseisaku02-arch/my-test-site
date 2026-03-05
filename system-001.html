@@ -7,48 +7,74 @@
 <title>システム｜AURORA</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #fff;   /* ← 白 */
-  color: #000;        /* ← 文字も黒に */
+
+/* ===== リセット ===== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* sectionの余白を完全に消す */
-section {
-  margin: 0;
-  padding: 0;
+body{
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+  background:#fff;
+  color:#000;
 }
 
-/* aタグ由来のズレ防止 */
-.content a {
-  display: block;
-  line-height: 0;
+/* ===== 画像共通 ===== */
+
+img{
+  width:100%;
+  height:auto;
+  display:block;
+  vertical-align:bottom; /* ←1pxズレ防止 */
 }
 
-/* 念のため img も */
-.content img {
-  display: block;
+/* ===== リンク由来の隙間防止 ===== */
+
+a{
+  display:block;
+  line-height:0;
 }
 
+/* ===== セクション余白完全削除 ===== */
 
-img {
-  width: 100%;
-  height: auto;
-  display: block;
+section{
+  margin:0;
+  padding:0;
 }
 
-header img,
-footer img {
-  width: 100%;
+/* ===== 3カラム ===== */
+
+.case-row{
+  display:flex;
+  width:100%;
 }
 
-#error {
-  display: none;
-  text-align: center;
-  margin-top: 40vh;
-  font-size: 14px;
+.case-row a{
+  flex:1;
 }
+
+/* ===== スマホ ===== */
+
+@media (max-width:768px){
+
+.case-row{
+  flex-direction:column;
+}
+
+}
+
+/* ===== エラー ===== */
+
+#error{
+  display:none;
+  text-align:center;
+  margin-top:40vh;
+  font-size:14px;
+}
+
 </style>
 </head>
 
@@ -56,50 +82,67 @@ footer img {
 
 <div id="site">
 
-  <!-- ヘッダー（共通） -->
-  <header>
-    <a href="index.html">
-      <img src="images/header.png" alt="トップへ戻る">
-    </a>
-  </header>
+<!-- ヘッダー -->
+<header>
+<a href="index.html">
+<img src="images/header.png" alt="トップへ戻る">
+</a>
+</header>
 
-  <!-- メイン -->
- <section class="content">
-  <a href="https://sowaseisaku02-arch.github.io/my-test-site/system-002.html">
-    <img src="images/system-aurora-001.png" alt="AURORA システム">
-  </a>
 
-  <a href="https://sowaseisaku02-arch.github.io/my-test-site/images/system-aurora-spec.pdf"
-   target="_blank" rel="noopener">
-    <img src="images/system-aurora-spec.png" alt="AURORA スペック">
-  </a>
+<!-- メイン -->
+<section class="content">
 
-  <a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-aurora-001.html">
-    <img src="images/system-aurora-002.png" alt="AURORA 導入事例001へ">
-  </a>
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/system-002.html">
+<img src="images/system-aurora-001.png" alt="AURORA システム">
+</a>
 
-  <a href="https://sowaseisaku02-arch.github.io/my-test-site/system-002.html">
-    <img src="images/system-aurora-003.png" alt="別売り品">
-  </a>
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/images/system-aurora-spec.pdf"
+target="_blank" rel="noopener">
+<img src="images/system-aurora-spec.png" alt="AURORA スペック">
+</a>
 
-  <a href="https://sowaseisaku02-arch.github.io/my-test-site/images/system-aurora-chilld-beam-spec.pdf
-"
-   target="_blank" rel="noopener">
-    <img src="images/system-aurora-chilld-beam-spec.png" alt="チルドビーム スペック">
-  </a>
+
+<!-- ===== 導入事例3カラム ===== -->
+
+<div class="case-row">
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-aurora-001.html">
+<img src="images/case-system-aurora-001.png" alt="">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-aurora-002.html">
+<img src="images/case-system-aurora-002.png" alt="">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-aurora-003.html">
+<img src="images/case-system-aurora-003.png" alt="">
+</a>
+
+</div>
+
+<!-- ===== 以降通常画像 ===== -->
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/system-002.html">
+<img src="images/system-aurora-003.png" alt="別売り品">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/images/system-aurora-chilld-beam-spec.pdf"
+target="_blank" rel="noopener">
+<img src="images/system-aurora-chilld-beam-spec.png" alt="チルドビーム スペック">
+</a>
 
 </section>
 
 
-  <!-- フッター（共通） -->
-  <footer>
-    <img src="images/footer.png" alt="">
-  </footer>
+<!-- フッター -->
+<footer>
+<img src="images/footer.png" alt="">
+</footer>
 
 </div>
 
 <div id="error">アクセスできません</div>
-
 
 </body>
 </html>
