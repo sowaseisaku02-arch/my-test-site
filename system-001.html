@@ -28,7 +28,7 @@ img{
   width:100%;
   height:auto;
   display:block;
-  vertical-align:bottom; /* ←1pxズレ防止 */
+  vertical-align:bottom;
 }
 
 /* ===== リンク由来の隙間防止 ===== */
@@ -38,6 +38,15 @@ a{
   line-height:0;
 }
 
+/* ===== hoverエフェクト（PCのみ） ===== */
+
+@media (hover:hover){
+a:hover{
+  opacity:0.8;
+  transition:opacity .25s;
+}
+}
+
 /* ===== セクション余白完全削除 ===== */
 
 section{
@@ -45,15 +54,18 @@ section{
   padding:0;
 }
 
-/* ===== 3カラム ===== */
+/* ===== 導入事例3カラム ===== */
 
 .case-row{
   display:flex;
-  width:100%;
+  justify-content:space-between;
+  max-width:1350px;
+  margin:0 auto;
 }
 
 .case-row a{
-  flex:1;
+  width:430px;
+  min-width:0;
 }
 
 /* ===== スマホ ===== */
@@ -62,6 +74,14 @@ section{
 
 .case-row{
   flex-direction:column;
+}
+
+.case-row a{
+  width:100%;
+}
+
+.case-row a + a{
+  margin-top:12px;
 }
 
 }
@@ -83,6 +103,7 @@ section{
 <div id="site">
 
 <!-- ヘッダー -->
+
 <header>
 <a href="index.html">
 <img src="images/header.png" alt="トップへ戻る">
@@ -91,16 +112,18 @@ section{
 
 
 <!-- メイン -->
+
 <section class="content">
 
 <a href="https://sowaseisaku02-arch.github.io/my-test-site/system-002.html">
 <img src="images/system-aurora-001.png" alt="AURORA システム">
 </a>
 
-<a href="https://sowaseisaku02-arch.github.io/my-test-site/images/system-aurora-spec.pdf"
-target="_blank" rel="noopener">
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/images/system-aurora-spec.pdf" target="_blank" rel="noopener">
 <img src="images/system-aurora-spec.png" alt="AURORA スペック">
 </a>
+
+<img src="images/system-aurora-002.png" alt="AURORA 導入事例">
 
 
 <!-- ===== 導入事例3カラム ===== -->
@@ -108,18 +131,19 @@ target="_blank" rel="noopener">
 <div class="case-row">
 
 <a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-aurora-001.html">
-<img src="images/case-system-aurora-001.png" alt="">
+<img src="images/case-system-aurora-001-s.png" loading="lazy" alt="">
 </a>
 
 <a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-aurora-002.html">
-<img src="images/case-system-aurora-002.png" alt="">
+<img src="images/case-system-aurora-002-s.png" loading="lazy" alt="">
 </a>
 
 <a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-aurora-003.html">
-<img src="images/case-system-aurora-003.png" alt="">
+<img src="images/case-system-aurora-003-s.png" loading="lazy" alt="">
 </a>
 
 </div>
+
 
 <!-- ===== 以降通常画像 ===== -->
 
@@ -127,8 +151,7 @@ target="_blank" rel="noopener">
 <img src="images/system-aurora-003.png" alt="別売り品">
 </a>
 
-<a href="https://sowaseisaku02-arch.github.io/my-test-site/images/system-aurora-chilld-beam-spec.pdf"
-target="_blank" rel="noopener">
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/images/system-aurora-chilld-beam-spec.pdf" target="_blank" rel="noopener">
 <img src="images/system-aurora-chilld-beam-spec.png" alt="チルドビーム スペック">
 </a>
 
@@ -136,6 +159,7 @@ target="_blank" rel="noopener">
 
 
 <!-- フッター -->
+
 <footer>
 <img src="images/footer.png" alt="">
 </footer>
