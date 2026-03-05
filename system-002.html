@@ -40,10 +40,15 @@ a{
 
 /* ===== hoverエフェクト（PCのみ） ===== */
 
+a{
+  display:block;
+  line-height:0;
+  transition:opacity .25s;
+}
+
 @media (hover:hover){
 a:hover{
   opacity:0.8;
-  transition:opacity .25s;
 }
 }
 
@@ -66,6 +71,10 @@ section{
 .case-row a{
   width:430px;
   min-width:0;
+}
+
+footer{
+  margin-top:40px;
 }
 
 /* ===== スマホ ===== */
@@ -92,8 +101,7 @@ section{
   display:none;
   text-align:center;
   margin-top:40vh;
-  font-size:14px;
-}
+
 
 </style>
 </head>
@@ -115,7 +123,7 @@ section{
 
 <section class="content">
 
-<a href="https://sowaseisaku02-arch.github.io/my-test-site/system-002.html">
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/system-003.html">
 <img src="images/system-ictabs-001.png" alt="ICTABS システム">
 </a>
 
