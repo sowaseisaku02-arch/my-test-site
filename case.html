@@ -4,34 +4,71 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ケース｜導入事例</title>
+<title>システム｜AURORA</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #fff;   /* ← 白 */
-  color: #000;        /* ← 文字も黒に */
+
+/* ===== リセット ===== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-
-img {
-  width: 100%;
-  height: auto;
-  display: block;
+body{
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+  background:#fff;
+  color:#000;
 }
 
-header img,
-footer img {
-  width: 100%;
+/* ===== 画像 ===== */
+
+img{
+  width:100%;
+  height:auto;
+  display:block;
 }
 
-#error {
-  display: none;
-  text-align: center;
-  margin-top: 40vh;
-  font-size: 14px;
+/* ===== リンク ===== */
+
+a{
+  display:block;
+  line-height:0;
+  transition:opacity .25s;
 }
+
+@media (hover:hover){
+  a:hover{
+    opacity:0.8;
+  }
+}
+
+/* ===== グリッド（PC） ===== */
+
+.case-row{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:12px;
+  max-width:1350px;
+  margin:0 auto;
+  padding:0 10px;
+}
+
+/* ===== スマホ ===== */
+
+@media (max-width:768px){
+  .case-row{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ===== フッター ===== */
+
+footer{
+  margin-top:40px;
+}
+
 </style>
 </head>
 
@@ -39,28 +76,91 @@ footer img {
 
 <div id="site">
 
-  <!-- ヘッダー（共通） -->
-  <header>
-    <a href="index.html">
-      <img src="images/header.png" alt="トップへ戻る">
-    </a>
-  </header>
+<!-- ヘッダー -->
 
-  <!-- メイン -->
-  <section class="content">
-    <img src="images/case-000.png" alt="導入事例">
-  </section>
+<header>
+<a href="index.html">
+<img src="images/header.png" alt="トップへ戻る">
+</a>
+</header>
 
-  <!-- フッター（共通） -->
-  <footer>
-    <img src="images/footer.png" alt="">
-  </footer>
+<!-- メイン -->
+
+<img src="images/case-header.png" alt="導入事例">
+
+<!-- ===== 導入事例 ===== -->
+
+<div class="case-row">
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-aurora-001.html">
+<img src="images/case-system-aurora-001-s.png" loading="lazy" alt="導入事例 Aurora 001">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-aurora-002.html">
+<img src="images/case-system-aurora-002-s.png" loading="lazy" alt="導入事例 Aurora 002">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-aurora-003.html">
+<img src="images/case-system-aurora-003-s.png" loading="lazy" alt="導入事例 Aurora 003">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-ictabs-001.html">
+<img src="images/case-system-ictabs-001-s.png" loading="lazy" alt="導入事例 ICTABS 001">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-ictabs-002.html">
+<img src="images/case-system-ictabs-002-s.png" loading="lazy" alt="導入事例 ICTABS 002">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-ictabs-003.html">
+<img src="images/case-system-ictabs-003-s.png" loading="lazy" alt="導入事例 ICTABS 003">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-radiair-001.html">
+<img src="images/case-system-radiair-001-s.png" loading="lazy" alt="導入事例 Radiair 001">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-radiair-002.html">
+<img src="images/case-system-radiair-002-s.png" loading="lazy" alt="導入事例 Radiair 002">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-radiair-003.html">
+<img src="images/case-system-radiair-003-s.png" loading="lazy" alt="導入事例 Radiair 003">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-c-thermo-001.html">
+<img src="images/case-system-c-thermo-001-s.png" loading="lazy" alt="導入事例 C-Thermo 001">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-c-thermo-002.html">
+<img src="images/case-system-c-thermo-002-s.png" loading="lazy" alt="導入事例 C-Thermo 002">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-c-thermo-003.html">
+<img src="images/case-system-c-thermo-003-s.png" loading="lazy" alt="導入事例 C-Thermo 003">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-film-duct-001.html">
+<img src="images/case-system-film-duct-001-s.png" loading="lazy" alt="導入事例 Film Duct 001">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-film-duct-002.html">
+<img src="images/case-system-film-duct-002-s.png" loading="lazy" alt="導入事例 Film Duct 002">
+</a>
+
+<a href="https://sowaseisaku02-arch.github.io/my-test-site/case-system-film-duct-003.html">
+<img src="images/case-system-film-duct-003-s.png" loading="lazy" alt="導入事例 Film Duct 003">
+</a>
 
 </div>
 
-<div id="error">アクセスできません</div>
+<!-- フッター -->
 
+<footer>
+<img src="images/footer.png" alt="フッター">
+</footer>
 
+</div>
 
 </body>
 </html>
